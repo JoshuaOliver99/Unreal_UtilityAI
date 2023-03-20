@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UObject/NoExportTypes.h"
 #include "Runtime/Engine/Classes/Engine/Blueprint.h"
 #include "Runtime/AIModule/Classes/AIController.h"
 #include "UtilityAIAction.generated.h"

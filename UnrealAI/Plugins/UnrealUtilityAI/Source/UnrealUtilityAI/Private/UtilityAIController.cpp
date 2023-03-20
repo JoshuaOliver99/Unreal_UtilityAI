@@ -3,9 +3,7 @@
 
 #include "UtilityAIController.h"
 
-AUtilityAIController::AUtilityAIController(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
+AUtilityAIController::AUtilityAIController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
 {
-
 	UtilityAIComponent = CreateDefaultSubobject<UUtilityAIComponent>("UtilityAIComponent");
 }
