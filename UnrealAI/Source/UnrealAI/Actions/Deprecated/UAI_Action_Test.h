@@ -32,5 +32,4 @@ public:
 
 	// Exit (called whenever the brain switches to another action)
 	virtual void Exit(AAIController* Controller, APawn* Pawn) override;
-	
 };

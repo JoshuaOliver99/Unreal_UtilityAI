@@ -22,5 +22,4 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UUtilityAIComponent* UtilityAIComponent;
-
 };

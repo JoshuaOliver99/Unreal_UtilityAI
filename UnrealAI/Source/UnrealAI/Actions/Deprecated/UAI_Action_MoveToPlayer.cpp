@@ -3,7 +3,6 @@
 
 #include "UAI_Action_MoveToPlayer.h"
 
-#include "UAI_PlayerController.h"
 #include "Kismet/GameplayStatics.h"
 
 void UUAI_Action_MoveToPlayer::Spawn(AAIController* Controller)
