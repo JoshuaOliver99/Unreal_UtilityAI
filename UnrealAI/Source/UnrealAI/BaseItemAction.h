@@ -25,6 +25,8 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Action Properties")
 	AActor* Actor;
 
+
+	
 	// Virtual method to check if this action can be performed
 	UFUNCTION(BlueprintCallable, Category = "Action Methods")
 	virtual bool CanPerform() const;
