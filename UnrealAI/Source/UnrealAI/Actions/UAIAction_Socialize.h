@@ -1,14 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UtilityAIAction.h"
+#include "BaseUAIAction.h"
 #include "UAIAction_Socialize.generated.h"
 
 /**
  * A basic utility AI socialize action.
  */
 UCLASS()
-class UNREALAI_API UUAIAction_Socialize : public UUtilityAIAction
+class UNREALAI_API UUAIAction_Socialize : public UBaseUAIAction
 {
 	GENERATED_BODY()
 

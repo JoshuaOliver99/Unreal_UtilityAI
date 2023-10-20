@@ -1,14 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UtilityAIAction.h"
+#include "BaseUAIAction.h"
 #include "UAIAction_Eat.generated.h"
 
 /**
  * A basic utility AI eat action.
  */
 UCLASS()
-class UNREALAI_API UUAIAction_Eat : public UUtilityAIAction
+class UNREALAI_API UUAIAction_Eat : public UBaseUAIAction
 {
 	GENERATED_BODY()
 

@@ -36,7 +36,8 @@ void ASimPawn::Tick(float DeltaTime)
 	Loneliness = FMath::Clamp(Loneliness + DeltaTime * 5.f, 0.f, 100.f);
 	Dirtiness = FMath::Clamp(Dirtiness + DeltaTime * 10.f, 0.f, 100.f);
 
-	UE_LOG(LogTemp, Log, TEXT("Hunger: %f, Tiredness: %f, Loneliness: %f, Dirtiness: %f"), Hunger, Tiredness, Loneliness, Dirtiness);
+	// Debug log the current values.
+	//UE_LOG(LogTemp, Log, TEXT("Hunger: %f, Tiredness: %f, Loneliness: %f, Dirtiness: %f"), Hunger, Tiredness, Loneliness, Dirtiness);
 }
 
 // Called to bind functionality to input

@@ -1,14 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UtilityAIAction.h"
-#include "UAIAction_CleanSelf.generated.h"
+#include "BaseUAIAction.h"
+#include "UAIAction_Cleanse.generated.h"
 
 /**
  * A basic utility AI clean self action.
  */
 UCLASS()
-class UNREALAI_API UUAIAction_CleanSelf : public UUtilityAIAction
+class UNREALAI_API UUAIAction_Cleanse : public UBaseUAIAction
 {
 	GENERATED_BODY()
 

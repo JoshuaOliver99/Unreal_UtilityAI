@@ -1,14 +1,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UtilityAIAction.h"
+#include "BaseUAIAction.h"
 #include "UAIAction_Sleep.generated.h"
 
 /**
  * A basic utility AI sleep action.
  */
 UCLASS()
-class UNREALAI_API UUAIAction_Sleep : public UUtilityAIAction
+class UNREALAI_API UUAIAction_Sleep : public UBaseUAIAction
 {
 	GENERATED_BODY()
 

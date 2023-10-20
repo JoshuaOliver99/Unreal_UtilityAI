@@ -1,14 +1,16 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "UtilityAIAction.h"
-#include "UAIAction_UseToilet.generated.h"
+#include "BaseUAIAction.h"
+#include "UAIAction_Excrete.generated.h"
+
+class UCurveFloat;
 
 /**
  * A basic utility AI use toilet action.
  */
 UCLASS()
-class UNREALAI_API UUAIAction_UseToilet : public UUtilityAIAction
+class UNREALAI_API UUAIAction_Excrete : public UBaseUAIAction
 {
 	GENERATED_BODY()
 
