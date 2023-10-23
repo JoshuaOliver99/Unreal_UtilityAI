@@ -12,7 +12,8 @@
 				"UnrealUtilityAI",
 				"AIModule",
 				"Engine",
-				"CoreUObject"
+				"CoreUObject",
+				"UMG"
 			]
 		}
 	],
