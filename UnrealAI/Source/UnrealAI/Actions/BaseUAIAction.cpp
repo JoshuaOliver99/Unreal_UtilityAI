@@ -38,6 +38,10 @@ void UBaseUAIAction::Spawn(AAIController* Controller)
 		UE_LOG(LogTemp, Warning, TEXT("UBaseUAIAction::Spawn - CoreScoreCurve is null"));
 		return;
 	}
+
+
+	// Initiate the available action evaluation timer
+	GetWorld()->GetTimerManager().SetTimer(AvailableActionEvaluationTimerHandle, this, &UBaseUAIAction::InitiateAvailableActionEvaluationTimer, AvailableActionEvaluationDelay, true);
 }
 
 // Tick (called at every world tick if the action is the currently chosen one)

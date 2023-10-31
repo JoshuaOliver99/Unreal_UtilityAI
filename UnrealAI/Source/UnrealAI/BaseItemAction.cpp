@@ -3,6 +3,10 @@
 
 #include "BaseItemAction.h"
 
+UBaseItemAction::UBaseItemAction()
+{
+}
+
 bool UBaseItemAction::CanPerform() const
 {
 	return false;

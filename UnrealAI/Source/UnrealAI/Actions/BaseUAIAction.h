@@ -6,6 +6,7 @@
 #include "UtilityAIAction.h"
 #include "BaseUAIAction.generated.h"
 
+class UBaseItemAction;
 class ASimPawn;
 class UCurveFloat;
 
@@ -36,9 +37,9 @@ public:
 	// Exit (called whenever the brain switches to another action)
 	virtual void Exit(AAIController* Controller, APawn* Pawn) override;
 
-	
-protected:
 
+	// ---------- Core Attributes ----------
+protected:
 	// The sim pawn to be evaluated and controlled.
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	ASimPawn* Sim;
@@ -46,4 +47,30 @@ protected:
 	// The curve used to score the action.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
 	const UCurveFloat* CoreScoreCurve;
+
+
+	// ---------- Action Evaluation ----------
+protected:
+	// A list of all the actions that can be evaluated.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action Evaluation")
+	TArray<TSubclassOf<UBaseItemAction>> AvailableActions;
+
+	
+	// Timer handle used to delay update of the available actions array. Invoked in the Spawn function
+	FTimerHandle AvailableActionEvaluationTimerHandle;
+
+	// Delay before updating the available actions array.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action Evaluation")
+	float AvailableActionEvaluationDelay = 5.f;
+	
+	// The radius of the sphere used to find all available item actions
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Action Evaluation")
+	float AvailableActionEvaluationRadius = 1000.f;
+
+	
+	// Initiate the available action evaluation timer. Must be overriden in the child class.
+	UFUNCTION(BlueprintCallable, Category = "Action Evaluation")
+	virtual void InitiateAvailableActionEvaluationTimer() { UE_LOG(LogTemp, Warning, TEXT("InitiateAvailableActionEvaluationTimer not overwritten!")) };
+
+
 };

@@ -28,20 +28,33 @@ public:
 
 
 
-	// ---------- Added items ----------
-	// TODO: Review & Neaten into caegories
-
-
-	// The display name of the item
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item Properties")
-	FString Name;
-
-	// List of actions that can be performed with/on this item
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Item Properties")
-	TArray<UBaseItemAction*> Actions;
+	// ---------- Getters & Setters ----------
+public:
+	// Function to get the display name of the item
+	UFUNCTION(BlueprintPure, Category = "Item Properties")
+	FString GetDisplayName() const {return Name;};
 
 	
+	// Function to check if item is interactable
+	UFUNCTION(BlueprintPure, Category = "Interactions")
+	bool IsInteractable() const {return Actions.Num() > 0;};
 
+	// Function to get the list of actions that can be performed with/on this item
+	UFUNCTION(BlueprintPure, Category = "Interactions")
+	TArray<TSubclassOf<UBaseItemAction>> GetActions() const {return Actions;};
+	
+	
+	
+	// ---------- Core properties ----------
+protected:
+	// The display name of the item
+	UPROPERTY(EditAnywhere ,BlueprintReadWrite, Category = "Item Properties")
+	FString Name;
+
+	
+	// List of actions that can be performed with/on this item
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item Properties")
+	TArray<TSubclassOf<UBaseItemAction>> Actions;
 
 	
 	// Mesh for the physical representation of the item
@@ -51,9 +64,4 @@ public:
 	// Generic collider for the item. Specific colliders can be added in subclasses
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Mesh")
 	UPrimitiveComponent* ItemCollider;
-
-	
-	// Function to check if item is interactable
-	UFUNCTION(BlueprintPure, Category = "Interactions")
-	bool IsInteractable() const {return Actions.Num() > 0;};
 };

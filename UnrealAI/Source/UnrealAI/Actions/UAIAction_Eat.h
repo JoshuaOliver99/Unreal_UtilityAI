@@ -18,4 +18,9 @@ public:
 	
 	UFUNCTION(meta = (DisplayName = "Enter"))
 	virtual void Enter(AAIController* Controller, APawn* Pawn) override;
+
+
+protected:
+	// override the InitiateAvailableActionEvaluationTimer
+	virtual void InitiateAvailableActionEvaluationTimer() override;
 };
